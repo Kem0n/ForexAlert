@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +20,7 @@ namespace ForexAlert
             InitializeComponent();
             view = new View();
             getCurrency();
+            getPrice("GBPUSD");
         }
 
         public void getCurrency()
@@ -125,13 +128,13 @@ namespace ForexAlert
         public void getPrice(string Data)
         {
             string Url = @"https://www.freeforexapi.com/api/live";
-            WebRequest req = new WebRequest.Create(Url + "?pairs=" + Data);
+            WebRequest req = WebRequest.Create(Url + "?pairs=" + Data);
             WebResponse resp = req.GetResponse();
             Stream stream = resp.GetResponseStream();
             StreamReader sr = new StreamReader(stream);
             string Out = sr.ReadToEnd();
             sr.Close();
-            return Out;
+            textBox1.Text = Out;
         }
     }
 }

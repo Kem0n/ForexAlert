@@ -59,6 +59,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -338,11 +339,20 @@
             this.label21.TabIndex = 22;
             this.label21.Text = "label21";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(544, 188);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(401, 399);
+            this.textBox1.TabIndex = 23;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(728, 641);
+            this.ClientSize = new System.Drawing.Size(957, 641);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label20);
@@ -410,6 +420,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
