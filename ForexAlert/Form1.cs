@@ -121,5 +121,17 @@ namespace ForexAlert
                 x++;
             }
         }
+        
+        public void getPrice(string Data)
+        {
+            string Url = @"https://www.freeforexapi.com/api/live";
+            WebRequest req = new WebRequest.Create(Url + "?pairs=" + Data);
+            WebResponse resp = req.GetResponse();
+            Stream stream = resp.GetResponseStream();
+            StreamReader sr = new StreamReader(stream);
+            string Out = sr.ReadToEnd();
+            sr.Close();
+            return Out;
+        }
     }
 }
