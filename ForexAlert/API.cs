@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ForexAlert
 {
-    class Data
+    class API
     {
-        rates rates;
-        int code;
+        public rates rates { get; set; }
+        public int code { get; set; }
     }
 }

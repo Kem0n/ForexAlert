@@ -69,8 +69,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Currency\AUDCHF.cs" />
+    <Compile Include="Currency\AUDJPY.cs" />
+    <Compile Include="Currency\CHFJPY.cs" />
+    <Compile Include="Currency\EURNZD.cs" />
+    <Compile Include="Currency\EURCAD.cs" />
+    <Compile Include="Currency\CADCHF.cs" />
+    <Compile Include="Currency\NZDJPY.cs" />
+    <Compile Include="Currency\NZDUSD.cs" />
+    <Compile Include="Currency\USDCHF.cs" />
+    <Compile Include="Currency\GBPCHF.cs" />
+    <Compile Include="Currency\GBPJPY.cs" />
+    <Compile Include="Currency\AUDNZD.cs" />
+    <Compile Include="Currency\AUDCAD.cs" />
+    <Compile Include="Currency\CADJPY.cs" />
+    <Compile Include="Currency\EURJPY.cs" />
+    <Compile Include="Currency\EURCHF.cs" />
+    <Compile Include="Currency\EURGBP.cs" />
+    <Compile Include="Currency\AUDUSD.cs" />
+    <Compile Include="Currency\USDCAD.cs" />
+    <Compile Include="Currency\USDJPY.cs" />
+    <Compile Include="Currency\EURUSD.cs" />
     <Compile Include="Currency\GBPUSD.cs" />
-    <Compile Include="Data.cs" />
+    <Compile Include="API.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

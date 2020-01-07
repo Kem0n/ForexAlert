@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -134,7 +135,9 @@ namespace ForexAlert
             StreamReader sr = new StreamReader(stream);
             string Out = sr.ReadToEnd();
             sr.Close();
-            textBox1.Text = Out;
+
+            API api = JsonConvert.DeserializeObject<API>(Out);
+            textBox1.Text = api.rates.gbpusd.rate.ToString();
         }
     }
 }

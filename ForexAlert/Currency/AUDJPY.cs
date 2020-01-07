@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ForexAlert.Currency
 {
-    public class GBPUSD
+    public class AUDJPY
     {
         public double rate { get; set; }
         public decimal timestamp { get; set; }
