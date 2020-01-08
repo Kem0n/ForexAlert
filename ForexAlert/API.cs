@@ -8,7 +8,9 @@ namespace ForexAlert
 {
     class API
     {
-        public rates rates { get; set; }
-        public int code { get; set; }
+        public bool status { get; set; }
+        public string msg { get; set; }
+        public response[] response { get; set; }
+        public info info { get; set; }
     }
 }

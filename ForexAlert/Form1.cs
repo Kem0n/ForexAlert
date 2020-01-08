@@ -21,34 +21,34 @@ namespace ForexAlert
             InitializeComponent();
             view = new View();
             getCurrency();
-            getPrice("GBPUSD");
+            getPrice("EUR/JPY");
         }
 
         public void getCurrency()
         {
             List<string> listCurrency = new List<string>();
-            listCurrency.Add("USDCHF");
-            listCurrency.Add("GBPUSD");
-            listCurrency.Add("EURUSD");
-            listCurrency.Add("USDJPY");
-            listCurrency.Add("USDCAD");
-            listCurrency.Add("AUDUSD");
-            listCurrency.Add("EURGBP");
-            listCurrency.Add("EURCHF");
-            listCurrency.Add("EURJPY");
-            listCurrency.Add("GBPCHF");
-            listCurrency.Add("CADJPY");
-            listCurrency.Add("GBPJPY");
-            listCurrency.Add("AUDNZD");
-            listCurrency.Add("AUDCAD");
-            listCurrency.Add("AUDCHF");
-            listCurrency.Add("AUDJPY");
-            listCurrency.Add("CHFJPY");
-            listCurrency.Add("EURNZD");
-            listCurrency.Add("EURCAD");
-            listCurrency.Add("CADCHF");
-            listCurrency.Add("NZDJPY");
-            listCurrency.Add("NZDUSD");
+            listCurrency.Add("USD/CHF");
+            listCurrency.Add("GBP/USD");
+            listCurrency.Add("EUR/USD");
+            listCurrency.Add("USD/JPY");
+            listCurrency.Add("USD/CAD");
+            listCurrency.Add("AUD/USD");
+            listCurrency.Add("EUR/GBP");
+            listCurrency.Add("EUR/CHF");
+            listCurrency.Add("EUR/JPY");
+            listCurrency.Add("GBP/CHF");
+            listCurrency.Add("CAD/JPY");
+            listCurrency.Add("GBP/JPY");
+            listCurrency.Add("AUD/NZD");
+            listCurrency.Add("AUD/CAD");
+            listCurrency.Add("AUD/CHF");
+            listCurrency.Add("AUD/JPY");
+            listCurrency.Add("CHF/JPY");
+            listCurrency.Add("EUR/NZD");
+            listCurrency.Add("EUR/CAD");
+            listCurrency.Add("CAD/CHF");
+            listCurrency.Add("NZD/JPY");
+            listCurrency.Add("NZD/USD");
 
             int x = 0;
 
@@ -128,8 +128,9 @@ namespace ForexAlert
         
         public void getPrice(string Data)
         {
-            string Url = @"https://www.freeforexapi.com/api/live";
-            WebRequest req = WebRequest.Create(Url + "?pairs=" + Data);
+            string Url = @"https://fcsapi.com/api/forex/latest?symbol=";
+            string PostFix = @"&access_key=q0NKAX5YqeOstA88hNs0rIZ5dvK2z2IGeHtNK8t8ogzon9wE";
+            WebRequest req = WebRequest.Create(Url + Data+ PostFix);
             WebResponse resp = req.GetResponse();
             Stream stream = resp.GetResponseStream();
             StreamReader sr = new StreamReader(stream);
@@ -137,7 +138,9 @@ namespace ForexAlert
             sr.Close();
 
             API api = JsonConvert.DeserializeObject<API>(Out);
-            textBox1.Text = api.rates.gbpusd.rate.ToString();
+            textBox1.Text = api.response[0].symbol+" - "+api.response[0].price;
+
+            //textBox1.Text = Out;
         }
     }
 }

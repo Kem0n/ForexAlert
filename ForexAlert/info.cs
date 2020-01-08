@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace ForexAlert
 {
-    public class View
+    class info
     {
-        public string Currency;
-        public double Price = 0.00000;
+        public string server_time { get; set; }
     }
 }
