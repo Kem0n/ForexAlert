@@ -21,7 +21,7 @@ namespace ForexAlert
             InitializeComponent();
             view = new View();
             getCurrency();
-            getPrice("EUR/JPY");
+            //getPrice("EUR/JPY");
         }
 
         public void getCurrency()
@@ -35,95 +35,104 @@ namespace ForexAlert
             listCurrency.Add("AUD/USD");
             listCurrency.Add("EUR/GBP");
             listCurrency.Add("EUR/CHF");
-            listCurrency.Add("EUR/JPY");
-            listCurrency.Add("GBP/CHF");
-            listCurrency.Add("CAD/JPY");
-            listCurrency.Add("GBP/JPY");
-            listCurrency.Add("AUD/NZD");
-            listCurrency.Add("AUD/CAD");
-            listCurrency.Add("AUD/CHF");
-            listCurrency.Add("AUD/JPY");
-            listCurrency.Add("CHF/JPY");
-            listCurrency.Add("EUR/NZD");
-            listCurrency.Add("EUR/CAD");
-            listCurrency.Add("CAD/CHF");
-            listCurrency.Add("NZD/JPY");
-            listCurrency.Add("NZD/USD");
+            //listCurrency.Add("EUR/JPY");
+            //listCurrency.Add("GBP/CHF");
+            //listCurrency.Add("CAD/JPY");
+            //listCurrency.Add("GBP/JPY");
+            //listCurrency.Add("AUD/NZD");
+            //listCurrency.Add("AUD/CAD");
+            //listCurrency.Add("AUD/CHF");
+            //listCurrency.Add("AUD/JPY");
+            //listCurrency.Add("CHF/JPY");
+            //listCurrency.Add("EUR/NZD");
+            //listCurrency.Add("EUR/CAD");
+            //listCurrency.Add("CAD/CHF");
+            //listCurrency.Add("NZD/JPY");
+            //listCurrency.Add("NZD/USD");
 
-            int x = 0;
+            string para = "";
 
-            foreach (string item in listCurrency)
+            foreach (var item in listCurrency)
             {
-                switch (x)
-                {
-                    case 1:
-                        label1.Text = item;
-                        break;
-                    case 2:
-                        label2.Text = item;
-                        break;
-                    case 3:
-                        label3.Text = item;
-                        break;
-                    case 4:
-                        label4.Text = item;
-                        break;
-                    case 5:
-                        label5.Text = item;
-                        break;
-                    case 6:
-                        label6.Text = item;
-                        break;
-                    case 7:
-                        label7.Text = item;
-                        break;
-                    case 8:
-                        label8.Text = item;
-                        break;
-                    case 9:
-                        label9.Text = item;
-                        break;
-                    case 10:
-                        label10.Text = item;
-                        break;
-                    case 11:
-                        label11.Text = item;
-                        break;
-                    case 12:
-                        label12.Text = item;
-                        break;
-                    case 13:
-                        label13.Text = item;
-                        break;
-                    case 14:
-                        label14.Text = item;
-                        break;
-                    case 15:
-                        label15.Text = item;
-                        break;
-                    case 16:
-                        label16.Text = item;
-                        break;
-                    case 17:
-                        label17.Text = item;
-                        break;
-                    case 18:
-                        label18.Text = item;
-                        break;
-                    case 19:
-                        label19.Text = item;
-                        break;
-                    case 20:
-                        label20.Text = item;
-                        break;
-                    case 21:
-                        label21.Text = item;
-                        break;
-                    default:
-                        break;
-                }
-                x++;
+                para += para + "," + item;
             }
+
+            getPrice(para);
+            //int x = 0;
+            //string price;
+
+            //foreach (string item in listCurrency)
+            //{
+            //    switch (x)
+            //    {
+            //        case 1:
+            //            label1.Text = String.Format("{0} - {1}",item,price);
+            //            break;
+            //        case 2:
+            //            label2.Text = String.Format("{0} - {1}", item, price);
+            //            break;
+            //        case 3:
+            //            label3.Text = String.Format("{0} - {1}", item, price);
+            //            break;
+            //        case 4:
+            //            label4.Text = String.Format("{0} - {1}", item, price);
+            //            break;
+            //        case 5:
+            //            label5.Text = String.Format("{0} - {1}", item, price);
+            //            break;
+            //        case 6:
+            //            label6.Text = String.Format("{0} - {1}", item, price);
+            //            break;
+            //        case 7:
+            //            label7.Text = String.Format("{0} - {1}", item, price);
+            //            break;
+            //        case 8:
+            //            label8.Text = String.Format("{0} - {1}", item, price);
+            //            break;
+            //        case 9:
+            //            label9.Text = String.Format("{0} - {1}", item, price);
+            //            break;
+            //        case 10:
+            //            label10.Text = String.Format("{0} - {1}", item, price);
+            //            break;
+            //        case 11:
+            //            label11.Text = String.Format("{0} - {1}", item, price);
+            //            break;
+            //        case 12:
+            //            label12.Text = String.Format("{0} - {1}", item, price);
+            //            break;
+            //        case 13:
+            //            label13.Text = String.Format("{0} - {1}", item, price);
+            //            break;
+            //        case 14:
+            //            label14.Text = String.Format("{0} - {1}", item, price);
+            //            break;
+            //        case 15:
+            //            label15.Text = String.Format("{0} - {1}", item, price);
+            //            break;
+            //        case 16:
+            //            label16.Text = String.Format("{0} - {1}", item, price);
+            //            break;
+            //        case 17:
+            //            label17.Text = String.Format("{0} - {1}", item, price);
+            //            break;
+            //        case 18:
+            //            label18.Text = String.Format("{0} - {1}", item, price);
+            //            break;
+            //        case 19:
+            //            label19.Text = String.Format("{0} - {1}", item, price);
+            //            break;
+            //        case 20:
+            //            label20.Text = String.Format("{0} - {1}", item, price);
+            //            break;
+            //        case 21:
+            //            label21.Text = String.Format("{0} - {1}", item, price);
+            //            break;
+            //        default:
+            //            break;
+            //    }
+            //    x++;
+            //}
         }
         
         public void getPrice(string Data)
@@ -137,10 +146,9 @@ namespace ForexAlert
             string Out = sr.ReadToEnd();
             sr.Close();
 
-            API api = JsonConvert.DeserializeObject<API>(Out);
-            textBox1.Text = api.response[0].symbol+" - "+api.response[0].price;
-
-            //textBox1.Text = Out;
+            textBox1.Text = Out;
+            //API api = JsonConvert.DeserializeObject<API>(Out);
+            //return api.response[0].price;
         }
     }
 }
