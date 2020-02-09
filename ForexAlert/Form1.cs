@@ -15,140 +15,55 @@ namespace ForexAlert
 {
     public partial class Form1 : Form
     {
-        View view;
         public Form1()
         {
             InitializeComponent();
-            view = new View();
-            getCurrency();
-            //getPrice("EUR/JPY");
+            View(getPrice());
+            listBox1.Items.Add("    Валютная пара       |      ЦЕНА      |      ТЕЙК      |       ЛОСС      ");
+            listBox1.Items.Add("--------------------------------------------------------------------------------------------------------------------");
         }
 
-        public void getCurrency()
+        public void View(API data)
         {
-            List<string> listCurrency = new List<string>();
-            listCurrency.Add("USD/CHF");
-            listCurrency.Add("GBP/USD");
-            listCurrency.Add("EUR/USD");
-            listCurrency.Add("USD/JPY");
-            listCurrency.Add("USD/CAD");
-            listCurrency.Add("AUD/USD");
-            listCurrency.Add("EUR/GBP");
-            listCurrency.Add("EUR/CHF");
-            //listCurrency.Add("EUR/JPY");
-            //listCurrency.Add("GBP/CHF");
-            //listCurrency.Add("CAD/JPY");
-            //listCurrency.Add("GBP/JPY");
-            //listCurrency.Add("AUD/NZD");
-            //listCurrency.Add("AUD/CAD");
-            //listCurrency.Add("AUD/CHF");
-            //listCurrency.Add("AUD/JPY");
-            //listCurrency.Add("CHF/JPY");
-            //listCurrency.Add("EUR/NZD");
-            //listCurrency.Add("EUR/CAD");
-            //listCurrency.Add("CAD/CHF");
-            //listCurrency.Add("NZD/JPY");
-            //listCurrency.Add("NZD/USD");
-
-            string para = "";
-
-            foreach (var item in listCurrency)
+            foreach (var item in data.response)
             {
-                para += para + "," + item;
+                listBox3.Items.Add(item.symbol+" | "+item.price+" | "+item.change);
+
+                if (item.change.Substring(0,1) == "-")
+                {
+                    listBox4.Items.Add(item.symbol + " | " + item.price + " | " + item.change);
+                }
+                else
+                {
+                    listBox5.Items.Add(item.symbol + " | " + item.price + " | " + item.change);
+                }
             }
-
-            getPrice(para);
-            //int x = 0;
-            //string price;
-
-            //foreach (string item in listCurrency)
-            //{
-            //    switch (x)
-            //    {
-            //        case 1:
-            //            label1.Text = String.Format("{0} - {1}",item,price);
-            //            break;
-            //        case 2:
-            //            label2.Text = String.Format("{0} - {1}", item, price);
-            //            break;
-            //        case 3:
-            //            label3.Text = String.Format("{0} - {1}", item, price);
-            //            break;
-            //        case 4:
-            //            label4.Text = String.Format("{0} - {1}", item, price);
-            //            break;
-            //        case 5:
-            //            label5.Text = String.Format("{0} - {1}", item, price);
-            //            break;
-            //        case 6:
-            //            label6.Text = String.Format("{0} - {1}", item, price);
-            //            break;
-            //        case 7:
-            //            label7.Text = String.Format("{0} - {1}", item, price);
-            //            break;
-            //        case 8:
-            //            label8.Text = String.Format("{0} - {1}", item, price);
-            //            break;
-            //        case 9:
-            //            label9.Text = String.Format("{0} - {1}", item, price);
-            //            break;
-            //        case 10:
-            //            label10.Text = String.Format("{0} - {1}", item, price);
-            //            break;
-            //        case 11:
-            //            label11.Text = String.Format("{0} - {1}", item, price);
-            //            break;
-            //        case 12:
-            //            label12.Text = String.Format("{0} - {1}", item, price);
-            //            break;
-            //        case 13:
-            //            label13.Text = String.Format("{0} - {1}", item, price);
-            //            break;
-            //        case 14:
-            //            label14.Text = String.Format("{0} - {1}", item, price);
-            //            break;
-            //        case 15:
-            //            label15.Text = String.Format("{0} - {1}", item, price);
-            //            break;
-            //        case 16:
-            //            label16.Text = String.Format("{0} - {1}", item, price);
-            //            break;
-            //        case 17:
-            //            label17.Text = String.Format("{0} - {1}", item, price);
-            //            break;
-            //        case 18:
-            //            label18.Text = String.Format("{0} - {1}", item, price);
-            //            break;
-            //        case 19:
-            //            label19.Text = String.Format("{0} - {1}", item, price);
-            //            break;
-            //        case 20:
-            //            label20.Text = String.Format("{0} - {1}", item, price);
-            //            break;
-            //        case 21:
-            //            label21.Text = String.Format("{0} - {1}", item, price);
-            //            break;
-            //        default:
-            //            break;
-            //    }
-            //    x++;
-            //}
         }
-        
-        public void getPrice(string Data)
+
+        public API getPrice()
         {
-            string Url = @"https://fcsapi.com/api/forex/latest?symbol=";
+            string Url = @"https://fcsapi.com/api/forex/latest?id=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60&access_key=";
             string PostFix = @"&access_key=q0NKAX5YqeOstA88hNs0rIZ5dvK2z2IGeHtNK8t8ogzon9wE";
-            WebRequest req = WebRequest.Create(Url + Data+ PostFix);
+            WebRequest req = WebRequest.Create(Url + PostFix);
             WebResponse resp = req.GetResponse();
             Stream stream = resp.GetResponseStream();
             StreamReader sr = new StreamReader(stream);
             string Out = sr.ReadToEnd();
             sr.Close();
 
-            textBox1.Text = Out;
-            //API api = JsonConvert.DeserializeObject<API>(Out);
-            //return api.response[0].price;
+            API api = JsonConvert.DeserializeObject<API>(Out);
+            return api;
+        }
+
+        public void AddNewPositionInForm1(string currency, string price, string taik, string loss)
+        {
+            listBox1.Items.Add(currency + " | " + price + " | " + " | " + taik + " | " + loss);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddNewPositionForm addform = new AddNewPositionForm();
+            addform.ShowDialog();
         }
     }
 }

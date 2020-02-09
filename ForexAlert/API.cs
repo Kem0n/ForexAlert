@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ForexAlert
 {
-    class API
+    public class API
     {
         public bool status { get; set; }
         public string msg { get; set; }

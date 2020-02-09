@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ForexAlert
 {
-    class info
+    public class info
     {
         public string server_time { get; set; }
     }
