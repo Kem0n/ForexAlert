@@ -12,6 +12,7 @@ namespace ForexAlert
 {
     public partial class AddNewPositionForm : Form
     {
+        Temp t;
         Form1 form1 = new Form1();
         public AddNewPositionForm()
         {
@@ -29,7 +30,7 @@ namespace ForexAlert
 
         private void buttonAddNewPosition_Click(object sender, EventArgs e)
         {
-            form1.AddNewPositionInForm1(comboBoxCurrency.SelectedText, textBoxPrice.Text, textBoxTaik.Text, textBoxLoss.Text);
+            t = new Temp(comboBoxCurrency.SelectedItem.ToString(),textBoxLoss.Text,textBoxTaik.Text,textBoxPrice.Text);
             this.Close();
         }
     }

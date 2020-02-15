@@ -64,6 +64,7 @@ namespace ForexAlert
         {
             AddNewPositionForm addform = new AddNewPositionForm();
             addform.ShowDialog();
+            listBox1.Items.Add(Temp.currency + " | " + Temp.price + " | " + Temp.taik + " | " + Temp.loss);
         }
     }
 }
