@@ -15,27 +15,36 @@ namespace ForexAlert
 {
     public partial class Form1 : Form
     {
+        int counter = 59;
+
         public Form1()
         {
             InitializeComponent();
+            timerSuper.Enabled = true;
+            timerSuper.Interval = 1000;
             View(getPrice());
-            listBox1.Items.Add("    Валютная пара       |      ЦЕНА      |      ТЕЙК      |       ЛОСС      ");
-            listBox1.Items.Add("--------------------------------------------------------------------------------------------------------------------");
         }
 
         public void View(API data)
         {
+
+
+            var d = data.response.Select(i => i.symbol).ToArray();
+
+            DataGridViewComboBoxCell cellSignal = (DataGridViewComboBoxCell)(dataGridViewSignal.Rows[0].Cells["CurrencyColumnSignal"]);
+            cellSignal.DataSource = d;
+            DataGridViewComboBoxCell cellCurrentPosition = (DataGridViewComboBoxCell)(dataGridViewCurrentPosition.Rows[0].Cells["СurrencyColumnCurrentPosition"]);
+            cellCurrentPosition.DataSource = d;
+            
             foreach (var item in data.response)
             {
-                listBox3.Items.Add(item.symbol+" | "+item.price+" | "+item.change);
-
                 if (item.change.Substring(0,1) == "-")
                 {
-                    listBox4.Items.Add(item.symbol + " | " + item.price + " | " + item.change);
+                    dataGridViewDown.Rows.Add(item.symbol,item.change);
                 }
                 else
                 {
-                    listBox5.Items.Add(item.symbol + " | " + item.price + " | " + item.change);
+                    dataGridViewUp.Rows.Add(item.symbol, item.change);
                 }
             }
         }
@@ -55,16 +64,19 @@ namespace ForexAlert
             return api;
         }
 
-        public void AddNewPositionInForm1(string currency, string price, string taik, string loss)
+        private void timerSuper_Tick(object sender, EventArgs e)
         {
-            listBox1.Items.Add(currency + " | " + price + " | " + " | " + taik + " | " + loss);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AddNewPositionForm addform = new AddNewPositionForm();
-            addform.ShowDialog();
-            listBox1.Items.Add(Temp.currency + " | " + Temp.price + " | " + Temp.taik + " | " + Temp.loss);
+            if (counter > 0)
+            {
+                counter--;
+                labelTime.Text = "00:" + counter;
+            }
+            else
+            {
+                counter = 59;
+                labelTime.Text = "00:" + counter;
+            }
+                
         }
     }
 }

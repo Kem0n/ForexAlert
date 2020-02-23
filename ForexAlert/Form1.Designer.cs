@@ -28,142 +28,230 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.dataGridViewCurrentPosition = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.listBox4 = new System.Windows.Forms.ListBox();
-            this.listBox5 = new System.Windows.Forms.ListBox();
+            this.dataGridViewSignal = new System.Windows.Forms.DataGridView();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dataGridViewUp = new System.Windows.Forms.DataGridView();
+            this.CurrencyColumnUp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChangeColumnUp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dataGridViewDown = new System.Windows.Forms.DataGridView();
+            this.CurrencyColumnDown = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChangeColumnDown = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelTime = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.timerSuper = new System.Windows.Forms.Timer(this.components);
+            this.СurrencyColumnCurrentPosition = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LossColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TaikColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ResultColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CurrencyColumnSignal = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.PriceColumnSignal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCurrentPosition)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSignal)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUp)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDown)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.listBox1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 188);
+            this.groupBox1.Controls.Add(this.dataGridViewCurrentPosition);
+            this.groupBox1.Location = new System.Drawing.Point(267, 194);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(501, 179);
+            this.groupBox1.Size = new System.Drawing.Size(602, 179);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Текущие сделки";
             // 
-            // button2
+            // dataGridViewCurrentPosition
             // 
-            this.button2.Location = new System.Drawing.Point(280, 146);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(159, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Удалить сделку";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(61, 146);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Добавить сделку";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 19);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(486, 121);
-            this.listBox1.TabIndex = 0;
+            this.dataGridViewCurrentPosition.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewCurrentPosition.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCurrentPosition.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.СurrencyColumnCurrentPosition,
+            this.price,
+            this.LossColumn,
+            this.TaikColumn,
+            this.ResultColumn});
+            this.dataGridViewCurrentPosition.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewCurrentPosition.Location = new System.Drawing.Point(3, 16);
+            this.dataGridViewCurrentPosition.Name = "dataGridViewCurrentPosition";
+            this.dataGridViewCurrentPosition.Size = new System.Drawing.Size(596, 160);
+            this.dataGridViewCurrentPosition.TabIndex = 3;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.listBox2);
-            this.groupBox2.Location = new System.Drawing.Point(12, 382);
+            this.groupBox2.Controls.Add(this.dataGridViewSignal);
+            this.groupBox2.Location = new System.Drawing.Point(261, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(501, 247);
+            this.groupBox2.Size = new System.Drawing.Size(274, 179);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Сигналы";
             // 
-            // button5
+            // dataGridViewSignal
             // 
-            this.button5.Location = new System.Drawing.Point(339, 218);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(147, 23);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Удалить сигнал";
-            this.button5.UseVisualStyleBackColor = true;
+            this.dataGridViewSignal.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewSignal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSignal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CurrencyColumnSignal,
+            this.PriceColumnSignal});
+            this.dataGridViewSignal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewSignal.Location = new System.Drawing.Point(3, 16);
+            this.dataGridViewSignal.Name = "dataGridViewSignal";
+            this.dataGridViewSignal.Size = new System.Drawing.Size(268, 160);
+            this.dataGridViewSignal.TabIndex = 4;
             // 
-            // button4
+            // groupBox3
             // 
-            this.button4.Location = new System.Drawing.Point(161, 218);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(168, 23);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Изменить сигнал";
-            this.button4.UseVisualStyleBackColor = true;
+            this.groupBox3.Controls.Add(this.dataGridViewUp);
+            this.groupBox3.Location = new System.Drawing.Point(15, 12);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(243, 179);
+            this.groupBox3.TabIndex = 22;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Вверх";
             // 
-            // button3
+            // dataGridViewUp
             // 
-            this.button3.Location = new System.Drawing.Point(6, 218);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(142, 23);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Добавить сигнал";
-            this.button3.UseVisualStyleBackColor = true;
+            this.dataGridViewUp.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewUp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CurrencyColumnUp,
+            this.ChangeColumnUp});
+            this.dataGridViewUp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewUp.Location = new System.Drawing.Point(3, 16);
+            this.dataGridViewUp.Name = "dataGridViewUp";
+            this.dataGridViewUp.Size = new System.Drawing.Size(237, 160);
+            this.dataGridViewUp.TabIndex = 0;
             // 
-            // listBox2
+            // CurrencyColumnUp
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(6, 19);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(486, 186);
-            this.listBox2.TabIndex = 0;
+            this.CurrencyColumnUp.HeaderText = "Валютная пара";
+            this.CurrencyColumnUp.Name = "CurrencyColumnUp";
+            this.CurrencyColumnUp.Width = 85;
             // 
-            // listBox3
+            // ChangeColumnUp
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(18, 12);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(263, 160);
-            this.listBox3.TabIndex = 22;
+            this.ChangeColumnUp.HeaderText = "Изменение";
+            this.ChangeColumnUp.Name = "ChangeColumnUp";
+            this.ChangeColumnUp.Width = 90;
             // 
-            // listBox4
+            // groupBox4
             // 
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.Location = new System.Drawing.Point(292, 12);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(221, 160);
-            this.listBox4.TabIndex = 23;
+            this.groupBox4.Controls.Add(this.dataGridViewDown);
+            this.groupBox4.Location = new System.Drawing.Point(15, 194);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(243, 179);
+            this.groupBox4.TabIndex = 23;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Вниз";
             // 
-            // listBox5
+            // dataGridViewDown
             // 
-            this.listBox5.FormattingEnabled = true;
-            this.listBox5.Location = new System.Drawing.Point(537, 12);
-            this.listBox5.Name = "listBox5";
-            this.listBox5.Size = new System.Drawing.Size(242, 160);
-            this.listBox5.TabIndex = 24;
+            this.dataGridViewDown.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewDown.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDown.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CurrencyColumnDown,
+            this.ChangeColumnDown});
+            this.dataGridViewDown.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewDown.Location = new System.Drawing.Point(3, 16);
+            this.dataGridViewDown.Name = "dataGridViewDown";
+            this.dataGridViewDown.Size = new System.Drawing.Size(237, 160);
+            this.dataGridViewDown.TabIndex = 0;
+            // 
+            // CurrencyColumnDown
+            // 
+            this.CurrencyColumnDown.HeaderText = "Валютная пара";
+            this.CurrencyColumnDown.Name = "CurrencyColumnDown";
+            this.CurrencyColumnDown.Width = 85;
+            // 
+            // ChangeColumnDown
+            // 
+            this.ChangeColumnDown.HeaderText = "Изменение";
+            this.ChangeColumnDown.Name = "ChangeColumnDown";
+            this.ChangeColumnDown.Width = 90;
+            // 
+            // labelTime
+            // 
+            this.labelTime.AutoSize = true;
+            this.labelTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelTime.Location = new System.Drawing.Point(541, 28);
+            this.labelTime.Name = "labelTime";
+            this.labelTime.Size = new System.Drawing.Size(200, 76);
+            this.labelTime.TabIndex = 24;
+            this.labelTime.Text = "00:00";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(541, 104);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(328, 84);
+            this.textBox1.TabIndex = 25;
+            // 
+            // timerSuper
+            // 
+            this.timerSuper.Tick += new System.EventHandler(this.timerSuper_Tick);
+            // 
+            // СurrencyColumnCurrentPosition
+            // 
+            this.СurrencyColumnCurrentPosition.HeaderText = "Валютные пары";
+            this.СurrencyColumnCurrentPosition.Name = "СurrencyColumnCurrentPosition";
+            this.СurrencyColumnCurrentPosition.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.СurrencyColumnCurrentPosition.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.СurrencyColumnCurrentPosition.Width = 150;
+            // 
+            // price
+            // 
+            this.price.HeaderText = "Цена";
+            this.price.Name = "price";
+            // 
+            // LossColumn
+            // 
+            this.LossColumn.HeaderText = "Стоп-Лосс";
+            this.LossColumn.Name = "LossColumn";
+            // 
+            // TaikColumn
+            // 
+            this.TaikColumn.HeaderText = "Тейк-Профит";
+            this.TaikColumn.Name = "TaikColumn";
+            // 
+            // ResultColumn
+            // 
+            this.ResultColumn.HeaderText = "Результат(ПП)";
+            this.ResultColumn.Name = "ResultColumn";
+            // 
+            // CurrencyColumnSignal
+            // 
+            this.CurrencyColumnSignal.HeaderText = "Валютные пары";
+            this.CurrencyColumnSignal.Name = "CurrencyColumnSignal";
+            this.CurrencyColumnSignal.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.CurrencyColumnSignal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // PriceColumnSignal
+            // 
+            this.PriceColumnSignal.HeaderText = "Цена";
+            this.PriceColumnSignal.Name = "PriceColumnSignal";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(957, 641);
-            this.Controls.Add(this.listBox5);
-            this.Controls.Add(this.listBox4);
-            this.Controls.Add(this.listBox3);
+            this.ClientSize = new System.Drawing.Size(881, 387);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.labelTime);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -172,24 +260,41 @@
             this.Name = "Form1";
             this.Text = "ForexAlert";
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCurrentPosition)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSignal)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUp)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDown)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ListBox listBox3;
-        private System.Windows.Forms.ListBox listBox4;
-        private System.Windows.Forms.ListBox listBox5;
+        private System.Windows.Forms.DataGridView dataGridViewCurrentPosition;
+        private System.Windows.Forms.DataGridView dataGridViewSignal;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DataGridView dataGridViewUp;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.DataGridView dataGridViewDown;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CurrencyColumnUp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChangeColumnUp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CurrencyColumnDown;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChangeColumnDown;
+        private System.Windows.Forms.Label labelTime;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Timer timerSuper;
+        private System.Windows.Forms.DataGridViewComboBoxColumn СurrencyColumnCurrentPosition;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LossColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TaikColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ResultColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn CurrencyColumnSignal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PriceColumnSignal;
     }
 }
 
